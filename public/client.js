@@ -1,7 +1,7 @@
 const username= document.getElementById('username').innerHTML.substr(6);
 const room= document.getElementById('room').innerHTML.substr(6);
 
-var socket = io.connect(process.env.DOMAIN);
+var socket = io.connect("localhost:8080");
 socket.on('connect', function (data) {
     socket.emit('join', room);
 });
