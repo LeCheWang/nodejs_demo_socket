@@ -1,6 +1,7 @@
 const username= document.getElementById('username').innerHTML.substr(6);
 const room= document.getElementById('room').innerHTML.substr(6);
-var socket = io.connect('https://chatting-gr.herokuapp.com');
+
+var socket = io.connect(process.env.DOMAIN);
 socket.on('connect', function (data) {
     socket.emit('join', room);
 });
